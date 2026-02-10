@@ -1,0 +1,372 @@
+[
+    {
+        "id": "1",
+        "name": "Kylian Mbappé",
+        "rating": 91,
+        "position": "ST",
+        "club": "Real Madrid",
+        "price": 3200000,
+        "change": 2.5,
+        "confidence": 85,
+        "targetPrice": 3100000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 3150000
+            },
+            {
+                "time": "10:00",
+                "price": 3180000
+            },
+            {
+                "time": "11:00",
+                "price": 3200000
+            },
+            {
+                "time": "12:00",
+                "price": 3190000
+            },
+            {
+                "time": "13:00",
+                "price": 3210000
+            },
+            {
+                "time": "14:00",
+                "price": 3200000
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Erling Haaland",
+        "rating": 91,
+        "position": "ST",
+        "club": "Manchester City",
+        "price": 450000,
+        "change": -1.2,
+        "confidence": 70,
+        "targetPrice": 420000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 460000
+            },
+            {
+                "time": "10:00",
+                "price": 455000
+            },
+            {
+                "time": "11:00",
+                "price": 450000
+            },
+            {
+                "time": "12:00",
+                "price": 448000
+            },
+            {
+                "time": "13:00",
+                "price": 452000
+            },
+            {
+                "time": "14:00",
+                "price": 450000
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Vinícius Júnior",
+        "rating": 90,
+        "position": "LW",
+        "club": "Real Madrid",
+        "price": 1100000,
+        "change": 4.1,
+        "confidence": 92,
+        "targetPrice": 1050000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 1020000
+            },
+            {
+                "time": "10:00",
+                "price": 1040000
+            },
+            {
+                "time": "11:00",
+                "price": 1060000
+            },
+            {
+                "time": "12:00",
+                "price": 1080000
+            },
+            {
+                "time": "13:00",
+                "price": 1100000
+            },
+            {
+                "time": "14:00",
+                "price": 1100000
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Jude Bellingham",
+        "rating": 90,
+        "position": "CM",
+        "club": "Real Madrid",
+        "price": 850000,
+        "change": 0.5,
+        "confidence": 78,
+        "targetPrice": 820000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 845000
+            },
+            {
+                "time": "10:00",
+                "price": 848000
+            },
+            {
+                "time": "11:00",
+                "price": 850000
+            },
+            {
+                "time": "12:00",
+                "price": 855000
+            },
+            {
+                "time": "13:00",
+                "price": 852000
+            },
+            {
+                "time": "14:00",
+                "price": 850000
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Alexia Putellas",
+        "rating": 90,
+        "position": "CM",
+        "club": "FC Barcelona",
+        "price": 600000,
+        "change": -3.4,
+        "confidence": 65,
+        "targetPrice": 550000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 630000
+            },
+            {
+                "time": "10:00",
+                "price": 620000
+            },
+            {
+                "time": "11:00",
+                "price": 610000
+            },
+            {
+                "time": "12:00",
+                "price": 605000
+            },
+            {
+                "time": "13:00",
+                "price": 602000
+            },
+            {
+                "time": "14:00",
+                "price": 600000
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "name": "Aitana Bonmatí",
+        "rating": 91,
+        "position": "CM",
+        "club": "FC Barcelona",
+        "price": 750000,
+        "change": 1.8,
+        "confidence": 80,
+        "targetPrice": 720000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 730000
+            },
+            {
+                "time": "10:00",
+                "price": 735000
+            },
+            {
+                "time": "11:00",
+                "price": 740000
+            },
+            {
+                "time": "12:00",
+                "price": 745000
+            },
+            {
+                "time": "13:00",
+                "price": 750000
+            },
+            {
+                "time": "14:00",
+                "price": 750000
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "name": "Kevin De Bruyne",
+        "rating": 90,
+        "position": "CM",
+        "club": "Manchester City",
+        "price": 95000,
+        "change": -0.8,
+        "confidence": 55,
+        "targetPrice": 90000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 97000
+            },
+            {
+                "time": "10:00",
+                "price": 96500
+            },
+            {
+                "time": "11:00",
+                "price": 96000
+            },
+            {
+                "time": "12:00",
+                "price": 95500
+            },
+            {
+                "time": "13:00",
+                "price": 95200
+            },
+            {
+                "time": "14:00",
+                "price": 95000
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "name": "Mohamed Salah",
+        "rating": 89,
+        "position": "RW",
+        "club": "Liverpool",
+        "price": 280000,
+        "change": 5.2,
+        "confidence": 88,
+        "targetPrice": 250000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 260000
+            },
+            {
+                "time": "10:00",
+                "price": 265000
+            },
+            {
+                "time": "11:00",
+                "price": 270000
+            },
+            {
+                "time": "12:00",
+                "price": 275000
+            },
+            {
+                "time": "13:00",
+                "price": 280000
+            },
+            {
+                "time": "14:00",
+                "price": 280000
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "name": "Virgil van Dijk",
+        "rating": 89,
+        "position": "CB",
+        "club": "Liverpool",
+        "price": 350000,
+        "change": 2.1,
+        "confidence": 82,
+        "targetPrice": 330000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 340000
+            },
+            {
+                "time": "10:00",
+                "price": 342000
+            },
+            {
+                "time": "11:00",
+                "price": 345000
+            },
+            {
+                "time": "12:00",
+                "price": 348000
+            },
+            {
+                "time": "13:00",
+                "price": 350000
+            },
+            {
+                "time": "14:00",
+                "price": 350000
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Federico Valverde",
+        "rating": 88,
+        "position": "CM",
+        "club": "Real Madrid",
+        "price": 220000,
+        "change": -1.5,
+        "confidence": 72,
+        "targetPrice": 200000,
+        "history": [
+            {
+                "time": "09:00",
+                "price": 225000
+            },
+            {
+                "time": "10:00",
+                "price": 223000
+            },
+            {
+                "time": "11:00",
+                "price": 221000
+            },
+            {
+                "time": "12:00",
+                "price": 220000
+            },
+            {
+                "time": "13:00",
+                "price": 222000
+            },
+            {
+                "time": "14:00",
+                "price": 220000
+            }
+        ]
+    }
+]

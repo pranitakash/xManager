@@ -6,9 +6,12 @@ import { cn } from "@/lib/utils";
 import { Zap } from "lucide-react";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { NavbarPopup } from "./navbar-popup";
+import { AnimatePresence } from "framer-motion";
 
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
+    const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,20 +45,26 @@ export function Navbar() {
                     </a>
 
                     <div className="hidden md:flex items-center gap-10 text-[11px] font-black tracking-[0.2em] text-gray-400 uppercase">
-                        {['Tactics', 'Clubhouse', 'Pitch Notes'].map((item) => (
-                            <a
+                        {['Tactics', 'Clubhouse', 'Pitch Notes', 'Elite'].map((item) => (
+                            <div
                                 key={item}
-                                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                                className="hover:text-[#00FF41] transition-colors"
+                                className="relative py-2"
+                                onMouseEnter={() => setHoveredItem(item)}
+                                onMouseLeave={() => setHoveredItem(null)}
                             >
-                                {item}
-                            </a>
+                                <a
+                                    href={item === "Elite" ? "#pro" : `#${item.toLowerCase().replace(' ', '-')}`}
+                                    className="hover:text-[#00FF41] transition-colors"
+                                >
+                                    {item}
+                                </a>
+                                <NavbarPopup item={item} isOpen={hoveredItem === item} />
+                            </div>
                         ))}
-                        <a href="#pro" className="hover:text-[#00FF41] transition-colors">Elite</a>
                     </div>
 
                     <div className="flex items-center gap-6">
-                        <a href="#" className="text-[11px] font-black uppercase tracking-widest text-white/50 hover:text-white transition-colors">Login</a>
+                        <a href="/auth" className="text-[11px] font-black uppercase tracking-widest text-white/50 hover:text-white transition-colors">Login</a>
                         <ShimmerButton
                             className="h-10 px-6 text-xs font-black uppercase tracking-tighter text-[#0B0E14]"
                             background="#00FF41"
