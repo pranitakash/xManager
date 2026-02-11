@@ -9,6 +9,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 import { Particles } from "@/components/ui/particles";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { TypingAnimation } from "@/components/ui/typing-animation";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { Sparkles } from "lucide-react";
 
 export default function BoardroomPage() {
@@ -66,21 +67,16 @@ export default function BoardroomPage() {
 
                                 <BlurFade delay={1.5}>
                                     <div className="flex flex-wrap gap-4">
-                                        <div className="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-[10px] uppercase font-black tracking-widest text-gray-500">
-                                            Fiscal Year 2026
-                                        </div>
-                                        <div className="px-4 py-2 bg-[#EAB308]/10 rounded-full border border-[#EAB308]/20 text-[10px] uppercase font-black tracking-widest text-[#EAB308]">
-                                            Tier 1 Clearance
-                                        </div>
-                                        <button
+                                        <ShimmerButton
                                             onClick={() => router.push("/agent?mode=boardroom")}
-                                            className="group flex items-center gap-3 px-6 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300"
+                                            className="h-12 px-8 text-[11px] font-black uppercase tracking-[0.2em] text-[#0B0E14]"
+                                            background="#EAB308"
+                                            shimmerColor="#ffffff"
                                         >
-                                            <span className="text-[10px] uppercase font-black tracking-wider text-white">Ask xManager Agent</span>
-                                            <div className="w-5 h-5 rounded-full bg-[#EAB308] flex items-center justify-center text-black group-hover:scale-110 transition-transform">
-                                                <Sparkles className="w-3 h-3" />
-                                            </div>
-                                        </button>
+                                            <span className="flex items-center gap-3">
+                                                Ask xManager Agent <Sparkles className="w-4 h-4" />
+                                            </span>
+                                        </ShimmerButton>
                                     </div>
                                 </BlurFade>
                             </div>

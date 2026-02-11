@@ -97,7 +97,7 @@ export default function AgentPage() {
             />
 
             {/* Subdued Switcher */}
-            <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50">
+            <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50">
                 <BlurFade delay={0.1}>
                     <div className="p-1 bg-white/[0.02] backdrop-blur-3xl border border-white/[0.05] rounded-xl flex items-center gap-0.5">
                         <button

@@ -13,7 +13,7 @@ export default function PitchNotesPage() {
             <Navbar />
             <RetroGrid className="opacity-10" />
 
-            <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+            <section className="relative pt-24 pb-20 px-6 overflow-hidden">
                 <Particles
                     className="absolute inset-0 z-0"
                     quantity={100}

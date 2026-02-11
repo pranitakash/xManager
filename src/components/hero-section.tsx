@@ -15,7 +15,7 @@ export function HeroSection() {
     const [activeTab, setActiveTab] = useState<"competitive" | "career">("competitive");
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0B0E14] px-4 pt-20">
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0B0E14] px-4 pt-16">
             {/* Premium Background Backgrounds */}
             <DotPattern
                 className={cn(
