@@ -22,7 +22,7 @@ export function AuthForms() {
                     animate={{ opacity: 1, x: 0 }}
                     className="flex items-center gap-3 mb-6"
                 >
-                    <img src="/xManager_Logo.png" alt="Logo" className="w-14 h-14 object-contain" />
+                    <img src="/xManager_Logo.png" alt="Logo" className="w-32 h-32 object-contain" />
                     <span className="text-2xl font-heading font-black tracking-[-0.05em] text-white uppercase italic">
                         FC <span className="lowercase">x</span><span className="text-[#00FF41]">Manager</span>
                     </span>

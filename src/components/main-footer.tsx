@@ -9,7 +9,7 @@ export function MainFooter() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 mb-32">
                     <div className="space-y-12">
                         <a href="/" className="flex items-start gap-4">
-                            <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-11 h-11 object-contain" />
+                            <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-20 h-20 object-contain" />
                             <div className="space-y-6">
                                 <span className="text-2xl font-heading font-black tracking-[-0.05em] text-white uppercase italic">
                                     FC <span className="lowercase">x</span><span className="text-[#00FF41]">Manager</span>
