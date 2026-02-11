@@ -36,9 +36,7 @@ export function Navbar() {
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <a href="/" className="flex items-center gap-3 group">
-                        <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#00FF41]/50 transition-all duration-500 overflow-hidden">
-                            <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-7 h-7 object-contain" />
-                        </div>
+                        <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-11 h-11 object-contain" />
                         <span className="text-2xl font-heading font-black tracking-[-0.05em] text-white uppercase italic">
                             FC <span className="lowercase">x</span><span className="text-[#00FF41]">Manager</span>
                         </span>
