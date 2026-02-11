@@ -128,6 +128,7 @@ export function HeroSection() {
                                 </InteractiveHoverButton>
                                 <InteractiveHoverButton
                                     className="h-14 px-10 border-white/10 text-white/70"
+                                    onClick={() => router.push("/pitch-notes")}
                                 >
                                     Watch Pitch Notes
                                 </InteractiveHoverButton>
