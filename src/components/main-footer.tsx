@@ -10,7 +10,7 @@ export function MainFooter() {
                     <div className="space-y-12">
                         <a href="/" className="flex items-start gap-4">
                             <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
-                                <img src="/logo.png" alt="FC xManager Logo" className="w-7 h-7 object-contain" />
+                                <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-7 h-7 object-contain" />
                             </div>
                             <div className="space-y-6">
                                 <span className="text-2xl font-heading font-black tracking-[-0.05em] text-white uppercase italic">
