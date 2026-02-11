@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Particles } from "@/components/ui/particles";
 import { DotPattern } from "@/components/ui/dot-pattern";
@@ -10,6 +11,7 @@ import { Trophy, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function HeroSection() {
+    const router = useRouter();
     const [activeTab, setActiveTab] = useState<"competitive" | "career">("competitive");
 
     return (
@@ -120,6 +122,7 @@ export function HeroSection() {
                             <div className="flex flex-col sm:flex-row gap-5 items-center justify-center">
                                 <InteractiveHoverButton
                                     className="h-14 px-10 text-white border-white/20"
+                                    onClick={() => router.push(activeTab === "competitive" ? "/pro-hub" : "/boardroom")}
                                 >
                                     {activeTab === "competitive" ? "Enter the Lab" : "Enter the Boardroom"}
                                 </InteractiveHoverButton>
