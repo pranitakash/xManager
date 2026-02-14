@@ -17,26 +17,17 @@ export const metadata: Metadata = {
   description: "Advanced AI-driven platform for elite FC 25 management, FIFA competitive trading, and tactical synthesis.",
 };
 
-import { ThemeProvider } from "@/components/theme-provider";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

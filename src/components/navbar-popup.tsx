@@ -17,25 +17,25 @@ const contentMap: Record<string, PopupContent> = {
         heading: "Strategic Blueprint",
         description: "Master your managerial strategy with our advanced formation engine. Fine-tune player roles, set high-press triggers, and simulate tactical shifts to outsmart any opponent.",
         icon: Layout,
-        color: "var(--primary)",
+        color: "#00FF41",
     },
     "Clubhouse": {
         heading: "Management Hub",
         description: "The heart of your club. Manage player happiness, develop world-class youth prospects in the academy, and upgrade facilities to build a lasting football legacy.",
         icon: Zap,
-        color: "var(--primary)",
+        color: "#00FF41",
     },
     "Pitch Notes": {
         heading: "Directives & Updates",
         description: "Stay ahead of the meta with detailed patch breakdowns, community-driven insights, and exclusive analysis from top-tier managers. Never miss a critical update.",
         icon: BookOpen,
-        color: "var(--primary)",
+        color: "#00FF41",
     },
     "Elite": {
         heading: "Pro Excellence",
         description: "Unlock the pinnacle of management. Access VIP scouting networks, run millions of AI-powered match simulations, and join the most prestigious expert circle.",
         icon: Crown,
-        color: "var(--secondary)",
+        color: "#D4AF37",
     },
 };
 
@@ -56,30 +56,30 @@ export function NavbarPopup({ item, isOpen }: { item: string; isOpen: boolean })
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[100] pointer-events-none"
                 >
                     <MagicCard
-                        className="w-80 p-6 bg-background/90 backdrop-blur-3xl border border-foreground/10 shadow-2xl overflow-hidden rounded-2xl pointer-events-auto transition-colors duration-500"
-                        gradientColor={content.color === "var(--primary)" ? "var(--primary)" : "var(--secondary)"}
+                        className="w-80 p-6 bg-[#0B0E14]/90 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden rounded-2xl pointer-events-auto"
+                        gradientColor={content.color + "20"}
                         gradientFrom={content.color}
-                        gradientTo="var(--background)"
+                        gradientTo="#ffffff"
                         gradientOpacity={0.15}
                     >
                         <div className="space-y-4 relative z-10 text-left">
                             <div
-                                className="w-12 h-12 rounded-xl flex items-center justify-center border border-foreground/5 shadow-inner"
-                                style={{ backgroundColor: content.color === "var(--primary)" ? "var(--primary-muted)" : "var(--secondary-muted)" }}
+                                className="w-12 h-12 rounded-xl flex items-center justify-center border border-white/5 shadow-inner"
+                                style={{ backgroundColor: content.color + "10" }}
                             >
                                 <Icon className="w-6 h-6" style={{ color: content.color }} />
                             </div>
 
                             <div className="space-y-2">
-                                <h4 className="text-sm font-black uppercase tracking-tight text-foreground">
+                                <h4 className="text-sm font-black uppercase tracking-tight text-white">
                                     {content.heading}
                                 </h4>
-                                <p className="text-[12px] font-medium text-muted-foreground leading-relaxed normal-case tracking-normal opacity-90">
+                                <p className="text-[12px] font-medium text-gray-400 leading-relaxed normal-case tracking-normal opacity-90">
                                     {content.description}
                                 </p>
                             </div>
 
-                            <div className="pt-2 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary group-hover:translate-x-1 transition-transform duration-300">
+                            <div className="pt-2 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#00FF41] group-hover:translate-x-1 transition-transform duration-300">
                                 Launch Module <Zap className="w-2.5 h-2.5 fill-current" />
                             </div>
                         </div>

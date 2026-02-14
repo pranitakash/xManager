@@ -15,7 +15,7 @@ export function HeroSection() {
     const [activeTab, setActiveTab] = useState<"competitive" | "career">("competitive");
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background px-4 pt-16 transition-colors duration-500">
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0B0E14] px-4 pt-16">
             {/* Premium Background Backgrounds */}
             <DotPattern
                 className={cn(
@@ -34,9 +34,9 @@ export function HeroSection() {
 
             <BlurFade delay={0.2} inView>
                 <div className="flex justify-center mb-8">
-                    <div className="px-4 py-1.5 rounded-full bg-foreground/5 border border-foreground/10 flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.3em] text-muted-foreground">
-                        <span className="text-primary font-black uppercase tracking-[0.3em]">FC 25</span>
-                        <div className="w-1 h-1 rounded-full bg-foreground/20" />
+                    <div className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.3em] text-gray-500">
+                        <span className="text-[#00FF41]">FC 25</span>
+                        <div className="w-1 h-1 rounded-full bg-white/20" />
                         <span>FIFA Universal Support</span>
                     </div>
                 </div>
@@ -49,13 +49,13 @@ export function HeroSection() {
                         onClick={() => setActiveTab("competitive")}
                         className={cn(
                             "relative px-10 py-3 rounded-xl text-xs font-black tracking-widest uppercase transition-all duration-500",
-                            activeTab === "competitive" ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                            activeTab === "competitive" ? "text-[#0B0E14]" : "text-gray-400 hover:text-white"
                         )}
                     >
                         {activeTab === "competitive" && (
                             <motion.div
                                 layoutId="toggle-bg"
-                                className="absolute inset-0 bg-primary rounded-xl shadow-[0_0_30px_rgba(0,191,49,0.3)]"
+                                className="absolute inset-0 bg-[#00FF41] rounded-xl shadow-[0_0_30px_rgba(0,255,65,0.4)]"
                                 transition={{ type: "spring", bounce: 0.15, duration: 0.6 }}
                             />
                         )}
@@ -67,13 +67,13 @@ export function HeroSection() {
                         onClick={() => setActiveTab("career")}
                         className={cn(
                             "relative px-10 py-3 rounded-xl text-xs font-black tracking-widest uppercase transition-all duration-500",
-                            activeTab === "career" ? "text-secondary-foreground" : "text-muted-foreground hover:text-foreground"
+                            activeTab === "career" ? "text-[#0B0E14]" : "text-gray-400 hover:text-white"
                         )}
                     >
                         {activeTab === "career" && (
                             <motion.div
                                 layoutId="toggle-bg"
-                                className="absolute inset-0 bg-secondary rounded-xl shadow-[0_0_30px_rgba(184,134,11,0.3)]"
+                                className="absolute inset-0 bg-[#D4AF37] rounded-xl shadow-[0_0_30px_rgba(212,175,55,0.4)]"
                                 transition={{ type: "spring", bounce: 0.15, duration: 0.6 }}
                             />
                         )}
@@ -88,16 +88,16 @@ export function HeroSection() {
             <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
                 <BlurFade delay={0.4} inView>
                     <div className="flex flex-col items-center mb-6">
-                        <span className="text-[10px] font-black uppercase tracking-[0.6em] text-primary mb-4">
+                        <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#00FF41] mb-4">
                             The Ultimate Sidekick for
                         </span>
                         <h1
-                            className="text-[8vw] md:text-7xl font-heading font-black tracking-[-0.05em] text-foreground uppercase leading-[0.8] flex flex-col items-center"
+                            className="text-[8vw] md:text-7xl font-heading font-black tracking-[-0.05em] text-white uppercase leading-[0.8] flex flex-col items-center"
                         >
-                            <span className="text-muted-foreground/60 text-[4vw] md:text-4xl mb-2 tracking-tighter">FC 25 & FIFA Elite</span>
-                            <span><span className="lowercase">x</span><span className={activeTab === "competitive" ? "text-primary" : "text-secondary"}>Manager</span></span>
+                            <span className="text-gray-500 opacity-50 text-[4vw] md:text-4xl mb-2 tracking-tighter">FC 25 & FIFA Elite</span>
+                            <span><span className="lowercase">x</span><span className={activeTab === "competitive" ? "text-[#00FF41]" : "text-[#D4AF37]"}>Manager</span></span>
                         </h1>
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/40 mt-6">
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00FF41]/40 mt-6">
                             The Only Way to Stop Bottling It.
                         </span>
                     </div>
@@ -113,7 +113,7 @@ export function HeroSection() {
                         className="flex flex-col items-center"
                     >
                         <BlurFade delay={0.2}>
-                            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl font-medium leading-relaxed tracking-tight text-center">
+                            <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl font-medium leading-relaxed tracking-tight text-center">
                                 {activeTab === "competitive"
                                     ? "Master the Meta. Stop the sweat and start dominating with industrial-grade tactical synthesis and real-time market pulse."
                                     : "No more unrealistic signings. Build a dynasty with procedural storylines and board logic that keeps your career mode actually real."}

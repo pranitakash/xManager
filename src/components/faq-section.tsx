@@ -29,14 +29,14 @@ const faqs = [
 
 export function FaqSection() {
     return (
-        <section id="pitch-notes" className="py-48 bg-background px-6 transition-colors duration-500">
+        <section id="pitch-notes" className="py-48 bg-[#0B0E14] px-6">
             <div className="max-w-4xl mx-auto">
                 <BlurFade delay={0.2} inView>
                     <div className="text-center mb-24">
-                        <h2 className="text-5xl md:text-7xl font-heading font-black text-foreground uppercase tracking-[-0.05em] mb-6">
-                            Pitch <span className="text-primary">Notes</span>
+                        <h2 className="text-5xl md:text-7xl font-heading font-black text-white uppercase tracking-[-0.05em] mb-6">
+                            Pitch <span className="text-[#00FF41]">Notes</span>
                         </h2>
-                        <p className="text-muted-foreground font-black uppercase tracking-[0.3em] text-[10px]">Everything you need to know to stop the bottle.</p>
+                        <p className="text-gray-500 font-black uppercase tracking-[0.3em] text-[10px]">Everything you need to know to stop the bottle.</p>
                     </div>
                 </BlurFade>
 
@@ -46,12 +46,12 @@ export function FaqSection() {
                             <Accordion type="single" collapsible className="w-full">
                                 <AccordionItem
                                     value={`item-${idx}`}
-                                    className="border-foreground/5 bg-foreground/[0.01] rounded-3xl px-10 hover:bg-foreground/[0.03] transition-colors"
+                                    className="border-white/5 bg-white/[0.01] rounded-3xl px-10 hover:bg-white/[0.03] transition-colors"
                                 >
-                                    <AccordionTrigger className="text-foreground font-black text-xl hover:no-underline hover:text-primary transition-all py-10 uppercase tracking-tight text-left">
+                                    <AccordionTrigger className="text-white font-black text-xl hover:no-underline hover:text-[#00FF41] transition-all py-10 uppercase tracking-tight text-left">
                                         {faq.question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="text-muted-foreground text-lg leading-relaxed pb-10 font-medium">
+                                    <AccordionContent className="text-gray-500 text-lg leading-relaxed pb-10 font-medium">
                                         {faq.answer}
                                     </AccordionContent>
                                 </AccordionItem>

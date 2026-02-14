@@ -12,7 +12,7 @@ import { MainFooter } from "@/components/main-footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary transition-colors duration-500">
+    <main className="min-h-screen bg-[#0B0E14] text-white selection:bg-[#00FF41]/30 selection:text-[#00FF41]">
       <Navbar />
       <HeroSection />
       <ProblemSection />

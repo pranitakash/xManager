@@ -27,22 +27,22 @@ export function MainFooter() {
             <div className="space-y-10">
                 <p>Our intelligence model leverages a multi-layer analysis system optimized for sporting predictive modeling and economic forecasting.</p>
                 <div className="space-y-6">
-                    <div className="flex items-start gap-6 p-6 border-l-2 border-primary/30 bg-white/[0.02]">
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-[#00FF41] font-bold text-xs">01</div>
+                    <div className="flex items-start gap-6 p-6 border-l-2 border-[#00FF41]/30 bg-white/[0.02]">
+                        <div className="w-8 h-8 rounded-full bg-[#00FF41]/10 flex items-center justify-center text-[#00FF41] font-bold text-xs">01</div>
                         <div>
                             <h5 className="text-white font-black uppercase text-xs mb-2">Tactical Synthesis</h5>
                             <p className="text-gray-500 text-sm">Heuristic modeling for custom tactics and formation instruction efficiency.</p>
                         </div>
                     </div>
-                    <div className="flex items-start gap-6 p-6 border-l-2 border-primary/30 bg-white/[0.02]">
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-[#00FF41] font-bold text-xs">02</div>
+                    <div className="flex items-start gap-6 p-6 border-l-2 border-[#00FF41]/30 bg-white/[0.02]">
+                        <div className="w-8 h-8 rounded-full bg-[#00FF41]/10 flex items-center justify-center text-[#00FF41] font-bold text-xs">02</div>
                         <div>
                             <h5 className="text-white font-black uppercase text-xs mb-2">Market Pulse</h5>
                             <p className="text-gray-500 text-sm">Random Forest regressors analyze historical price action and supply/demand trends.</p>
                         </div>
                     </div>
-                    <div className="flex items-start gap-6 p-6 border-l-2 border-primary/30 bg-white/[0.02]">
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-[#00FF41] font-bold text-xs">03</div>
+                    <div className="flex items-start gap-6 p-6 border-l-2 border-[#00FF41]/30 bg-white/[0.02]">
+                        <div className="w-8 h-8 rounded-full bg-[#00FF41]/10 flex items-center justify-center text-[#00FF41] font-bold text-xs">03</div>
                         <div>
                             <h5 className="text-white font-black uppercase text-xs mb-2">Career Logic</h5>
                             <p className="text-gray-500 text-sm">Procedural storyline generation and realistic board evaluation metrics.</p>
@@ -177,36 +177,36 @@ export function MainFooter() {
         });
     };
     return (
-        <footer className="bg-background border-t border-foreground/5 pt-32 pb-16 px-6 overflow-hidden transition-colors duration-500">
+        <footer className="bg-[#0B0E14] border-t border-white/5 pt-32 pb-16 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 mb-32">
                     <div className="space-y-12">
                         <a href="/" className="flex items-start gap-4">
                             <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-20 h-20 object-contain" />
                             <div className="space-y-6">
-                                <span className="text-2xl font-heading font-black tracking-[-0.05em] text-foreground uppercase italic">
-                                    FC <span className="lowercase">x</span><span className="text-primary">Manager</span>
+                                <span className="text-2xl font-heading font-black tracking-[-0.05em] text-white uppercase italic">
+                                    FC <span className="lowercase">x</span><span className="text-[#00FF41]">Manager</span>
                                 </span>
-                                <p className="text-muted-foreground/60 text-xs font-medium leading-relaxed uppercase tracking-widest transition-colors duration-500">
+                                <p className="text-gray-600 text-xs font-medium leading-relaxed uppercase tracking-widest">
                                     The ultimate sidekick for elite FC 25 players. Stop bottling the Weekend League and start building your dynasty with the most relatable AI in the game.
                                 </p>
                             </div>
                         </a>
                         <div className="flex gap-4">
-                            <a href="#" className="w-12 h-12 rounded-2xl bg-foreground/5 hover:bg-foreground/10 border-foreground/10">
+                            <a href="#" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/10">
                                 <Github className="w-5 h-5 text-white" />
                             </a>
-                            <a href="#" className="w-12 h-12 rounded-2xl bg-foreground/5 hover:bg-foreground/10 border-foreground/10">
+                            <a href="#" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/10">
                                 <Twitter className="w-5 h-5 text-white" />
                             </a>
-                            <a href="#" className="w-12 h-12 rounded-2xl bg-foreground/5 hover:bg-foreground/10 border-foreground/10">
+                            <a href="#" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/10">
                                 <MessageSquare className="w-5 h-5 text-white" />
                             </a>
                         </div>
                     </div>
 
                     <div>
-                        <h4 className="text-foreground font-black uppercase tracking-[0.4em] text-[10px] mb-12">Operational</h4>
+                        <h4 className="text-white font-black uppercase tracking-[0.4em] text-[10px] mb-12">Operational</h4>
                         <ul className="space-y-5">
                             {['Investment Whale', 'Transfer Scout', 'SBC Solutionist', 'Evo Optimizer', 'Tactics Sim'].map(item => (
                                 <li key={item}><a href="#" className="text-gray-600 hover:text-[#00FF41] transition-colors font-black text-xs uppercase tracking-widest">{item}</a></li>
@@ -215,7 +215,7 @@ export function MainFooter() {
                     </div>
 
                     <div>
-                        <h4 className="text-foreground font-black uppercase tracking-[0.4em] text-[10px] mb-12">Infrastructure</h4>
+                        <h4 className="text-white font-black uppercase tracking-[0.4em] text-[10px] mb-12">Infrastructure</h4>
                         <ul className="space-y-5">
                             {['Technical Docs', 'Model Architecture', 'Consensus Logs', 'System Status', 'Neural Ethics'].map(item => (
                                 <li key={item}>
@@ -231,7 +231,7 @@ export function MainFooter() {
                     </div>
 
                     <div>
-                        <h4 className="text-foreground font-black uppercase tracking-[0.4em] text-[10px] mb-12">Compliance</h4>
+                        <h4 className="text-white font-black uppercase tracking-[0.4em] text-[10px] mb-12">Compliance</h4>
                         <ul className="space-y-5">
                             {['Privacy Protocol', 'Service Terms', 'Policy Matrix', 'Data Security', 'Fair Usage'].map(item => (
                                 <li key={item}>
