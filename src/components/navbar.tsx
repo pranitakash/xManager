@@ -34,7 +34,7 @@ export function Navbar() {
                     <div className="flex-1 flex justify-start">
                         <div className="bg-[#0B0E14]/40 backdrop-blur-2xl border border-white/5 px-4 py-2 rounded-2xl flex items-center gap-3 shadow-2xl">
                             <a href="/" className="flex items-center gap-2">
-                                <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-8 h-8 object-contain" />
+                                <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-12 h-12 object-contain" />
                                 <span className="text-[14px] font-heading font-black tracking-[-0.05em] text-white uppercase italic">
                                     FC <span className="lowercase">x</span><span className="text-[#00FF41]">M</span><span className="hidden lg:inline text-white/40">anager</span>
                                 </span>
