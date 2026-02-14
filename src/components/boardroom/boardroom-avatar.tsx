@@ -6,7 +6,7 @@ export function BoardroomAvatar() {
     return (
         <div className="relative w-72 h-72 md:w-96 md:h-96 group">
             {/* Ambient Glow */}
-            <div className="absolute inset-x-0 bottom-0 top-1/2 bg-[#EAB308]/10 rounded-full blur-[100px] group-hover:bg-[#EAB308]/20 transition-colors duration-1000" />
+            <div className="absolute inset-x-0 bottom-0 top-1/2 bg-secondary/10 rounded-full blur-[100px] group-hover:bg-secondary/20 transition-colors duration-1000" />
 
             {/* The Manager */}
             <motion.div
@@ -32,9 +32,9 @@ export function BoardroomAvatar() {
             </motion.div>
 
             {/* Subtle atmospheric scan line */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#EAB308]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none rounded-full overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-t from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none rounded-full overflow-hidden">
                 <motion.div
-                    className="w-full h-[2px] bg-[#EAB308]/20"
+                    className="w-full h-[2px] bg-secondary/20"
                     animate={{
                         top: ["0%", "100%"]
                     }}

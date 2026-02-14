@@ -154,27 +154,27 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #0B0E14;
-  --foreground: #FFFFFF;
-  --card: #151921;
-  --card-foreground: #FFFFFF;
-  --popover: #151921;
-  --popover-foreground: #FFFFFF;
-  --primary: #00FF41;
-  --primary-foreground: #0B0E14;
-  --secondary: #D4AF37;
-  --secondary-foreground: #0B0E14;
-  --muted: #1F2937;
-  --muted-foreground: #9CA3AF;
-  --accent: #00FF41;
-  --accent-foreground: #0B0E14;
+  --background: #F8FAFC;
+  --foreground: #0B0E14;
+  --card: #FFFFFF;
+  --card-foreground: #0B0E14;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B0E14;
+  --primary: #00BF31;
+  --primary-foreground: #FFFFFF;
+  --secondary: #B8860B;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #00BF31;
+  --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
-  --border: #1F2937;
-  --input: #1F2937;
-  --ring: #00FF41;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #00BF31;
 
-  --competitive: #00FF41;
-  --career: #D4AF37;
+  --competitive: #00BF31;
+  --career: #B8860B;
   --deep-charcoal: #0B0E14;
   --color-1: oklch(66.2% 0.225 25.9);
   --color-2: oklch(60.4% 0.26 302);
@@ -219,6 +219,7 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.01em;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 
   h1,

@@ -6,7 +6,7 @@ export function Football3D() {
     return (
         <div className="relative w-40 h-40 md:w-56 md:h-56 group">
             {/* Premium Green Glow Base */}
-            <div className="absolute inset-0 bg-[#00FF41]/10 rounded-full blur-[60px] animate-pulse" />
+            <div className="absolute inset-0 bg-primary/10 rounded-full blur-[60px] animate-pulse" />
 
             {/* The Football */}
             <motion.div
@@ -30,7 +30,7 @@ export function Football3D() {
             </motion.div>
 
             {/* Decorative Ring */}
-            <div className="absolute inset-[-20px] border border-white/5 rounded-full animate-[spin_20s_linear_infinite]" />
+            <div className="absolute inset-[-20px] border border-foreground/5 rounded-full animate-[spin_20s_linear_infinite]" />
         </div>
     );
 }

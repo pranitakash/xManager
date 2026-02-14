@@ -22,14 +22,14 @@ export default function BoardroomPage() {
 
     if (!mounted) {
         return (
-            <main className="h-screen bg-[#0B0E14] text-white overflow-hidden relative flex flex-col items-center justify-center">
-                <div className="w-12 h-12 border-4 border-[#00FF41]/30 border-t-[#00FF41] rounded-full animate-spin" />
+            <main className="h-screen bg-background text-foreground overflow-hidden relative flex flex-col items-center justify-center">
+                <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
             </main>
         );
     }
 
     return (
-        <main className="h-screen bg-[#0B0E14] text-white selection:bg-[#00FF41]/30 selection:text-[#00FF41] overflow-hidden relative flex flex-col">
+        <main className="h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary overflow-hidden relative flex flex-col">
             <Navbar />
             <RetroGrid className="opacity-10" />
             <Particles
@@ -44,20 +44,20 @@ export default function BoardroomPage() {
                 <div className="flex-1 max-w-2xl">
                     <BlurFade delay={0.1}>
                         <div className="text-left">
-                            <h1 className="text-6xl md:text-8xl font-heading font-black text-white uppercase tracking-tighter leading-[0.85] mb-8">
+                            <h1 className="text-6xl md:text-8xl font-heading font-black text-foreground uppercase tracking-tighter leading-[0.85] mb-8">
                                 <TextAnimate animation="blurInUp" by="word" once>
                                     Executive
                                 </TextAnimate>
-                                <span className="text-[#EAB308] block">
+                                <span className="text-secondary block">
                                     <TextAnimate animation="blurInUp" by="word" once delay={0.3}>
                                         Boardroom
                                     </TextAnimate>
                                 </span>
                             </h1>
 
-                            <div className="space-y-6 border-l-2 border-[#EAB308]/30 pl-8">
+                            <div className="space-y-6 border-l-2 border-secondary/30 pl-8">
                                 <TypingAnimation
-                                    className="text-gray-400 text-xl md:text-2xl font-medium tracking-tight leading-relaxed text-left max-w-lg"
+                                    className="text-muted-foreground text-xl md:text-2xl font-medium tracking-tight leading-relaxed text-left max-w-lg"
                                     duration={25}
                                     delay={1000}
                                     startOnView
@@ -69,8 +69,8 @@ export default function BoardroomPage() {
                                     <div className="flex flex-wrap gap-4">
                                         <ShimmerButton
                                             onClick={() => router.push("/agent?mode=boardroom")}
-                                            className="h-12 px-8 text-[11px] font-black uppercase tracking-[0.2em] text-[#0B0E14]"
-                                            background="#EAB308"
+                                            className="h-12 px-8 text-[11px] font-black uppercase tracking-[0.2em] text-secondary-foreground"
+                                            background="var(--secondary)"
                                             shimmerColor="#ffffff"
                                         >
                                             <span className="flex items-center gap-3">

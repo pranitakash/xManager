@@ -9,6 +9,8 @@ import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { NavbarPopup } from "./navbar-popup";
 import { AnimatePresence } from "framer-motion";
 
+import { ThemeToggle } from "./theme-toggle";
+
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -32,11 +34,11 @@ export function Navbar() {
                 >
                     {/* Logo Capsule */}
                     <div className="flex-1 flex justify-start">
-                        <div className="bg-[#0B0E14]/40 backdrop-blur-2xl border border-white/5 px-4 py-2 rounded-2xl flex items-center gap-3 shadow-2xl">
+                        <div className="bg-black/20 dark:bg-[#0B0E14]/40 backdrop-blur-2xl border border-black/5 dark:border-white/5 px-4 py-2 rounded-2xl flex items-center gap-3 shadow-2xl">
                             <a href="/" className="flex items-center gap-2">
                                 <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-8 h-8 object-contain" />
-                                <span className="text-[14px] font-heading font-black tracking-[-0.05em] text-white uppercase italic">
-                                    FC <span className="lowercase">x</span><span className="text-[#00FF41]">M</span><span className="hidden lg:inline text-white/40">anager</span>
+                                <span className="text-[14px] font-heading font-black tracking-[-0.05em] text-foreground uppercase italic">
+                                    FC <span className="lowercase">x</span><span className="text-[#00FF41]">M</span><span className="hidden lg:inline text-foreground/40">anager</span>
                                 </span>
                             </a>
                         </div>
@@ -44,7 +46,7 @@ export function Navbar() {
 
                     {/* Navigation Capsule */}
                     <div className="flex-none hidden md:flex">
-                        <div className="bg-[#0B0E14]/40 backdrop-blur-2xl border border-white/5 px-6 py-2 rounded-2xl flex items-center gap-8 shadow-2xl">
+                        <div className="bg-black/20 dark:bg-[#0B0E14]/40 backdrop-blur-2xl border border-black/5 dark:border-white/5 px-6 py-2 rounded-2xl flex items-center gap-8 shadow-2xl">
                             {['Tactics', 'Clubhouse', 'Pitch Notes', 'Elite'].map((item) => (
                                 <div
                                     key={item}
@@ -54,7 +56,7 @@ export function Navbar() {
                                 >
                                     <a
                                         href={item === "Elite" ? "#pro" : `#${item.toLowerCase().replace(' ', '-')}`}
-                                        className="text-[9px] font-black tracking-[0.2em] text-gray-400 uppercase hover:text-[#00FF41] transition-colors"
+                                        className="text-[9px] font-black tracking-[0.2em] text-muted-foreground uppercase hover:text-[#00FF41] transition-colors"
                                     >
                                         {item}
                                     </a>
@@ -64,18 +66,19 @@ export function Navbar() {
                         </div>
                     </div>
 
-                    {/* Auth Capsule */}
-                    <div className="flex-1 flex justify-end">
-                        <div className="bg-[#0B0E14]/40 backdrop-blur-2xl border border-white/5 px-4 py-1.5 rounded-2xl flex items-center gap-4 shadow-2xl">
-                            <a href="/auth" className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-white transition-colors">Login</a>
+                    {/* Auth & Theme Capsule */}
+                    <div className="flex-1 flex justify-end gap-4">
+                        <div className="bg-black/20 dark:bg-[#0B0E14]/40 backdrop-blur-2xl border border-black/5 dark:border-white/5 px-4 py-1.5 rounded-2xl flex items-center gap-4 shadow-2xl">
+                            <a href="/auth" className="text-[10px] font-black uppercase tracking-widest text-foreground/50 hover:text-foreground transition-colors">Login</a>
                             <ShimmerButton
-                                className="h-8 px-4 text-[9px] font-black uppercase tracking-tighter text-[#0B0E14]"
-                                background="#00FF41"
+                                className="h-8 px-4 text-[9px] font-black uppercase tracking-tighter text-primary-foreground"
+                                background="var(--primary)"
                                 shimmerColor="#ffffff"
                             >
                                 Access
                             </ShimmerButton>
                         </div>
+                        <ThemeToggle />
                     </div>
                 </motion.nav>
             </div>
