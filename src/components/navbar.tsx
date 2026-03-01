@@ -3,15 +3,17 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Zap } from "lucide-react";
+import { Zap, Clock } from "lucide-react";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { NavbarPopup } from "./navbar-popup";
 import { AnimatePresence } from "framer-motion";
+import { useAuth } from "@/hooks/use-auth";
 
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+    const { isLoggedIn, isLoading, logout } = useAuth();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -61,20 +63,50 @@ export function Navbar() {
                                     <NavbarPopup item={item} isOpen={hoveredItem === item} />
                                 </div>
                             ))}
+                            <div className="w-[1px] h-4 bg-white/10" />
+                            <a
+                                href="/history"
+                                className="text-[9px] font-black tracking-[0.2em] text-gray-400 uppercase hover:text-[#00FF41] transition-colors flex items-center gap-1.5"
+                            >
+                                <Clock className="w-3.5 h-3.5" />
+                                History
+                            </a>
                         </div>
                     </div>
 
                     {/* Auth Capsule */}
                     <div className="flex-1 flex justify-end">
                         <div className="bg-[#0B0E14]/40 backdrop-blur-2xl border border-white/5 px-4 py-1.5 rounded-2xl flex items-center gap-4 shadow-2xl">
-                            <a href="/auth" className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-white transition-colors">Login</a>
-                            <ShimmerButton
-                                className="h-8 px-4 text-[9px] font-black uppercase tracking-tighter text-[#0B0E14]"
-                                background="#00FF41"
-                                shimmerColor="#ffffff"
-                            >
-                                Access
-                            </ShimmerButton>
+                            {!isLoading && isLoggedIn ? (
+                                <>
+                                    <button
+                                        onClick={logout}
+                                        className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-red-400 transition-colors"
+                                    >
+                                        Logout
+                                    </button>
+                                    <ShimmerButton
+                                        onClick={() => window.location.href = "/agent"}
+                                        className="h-8 px-4 text-[9px] font-black uppercase tracking-tighter text-[#0B0E14]"
+                                        background="#00FF41"
+                                        shimmerColor="#ffffff"
+                                    >
+                                        Go to Agent
+                                    </ShimmerButton>
+                                </>
+                            ) : (
+                                <>
+                                    <a href="/auth" className="text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-white transition-colors">Login</a>
+                                    <ShimmerButton
+                                        onClick={() => window.location.href = "/auth"}
+                                        className="h-8 px-4 text-[9px] font-black uppercase tracking-tighter text-[#0B0E14]"
+                                        background="#00FF41"
+                                        shimmerColor="#ffffff"
+                                    >
+                                        Access
+                                    </ShimmerButton>
+                                </>
+                            )}
                         </div>
                     </div>
                 </motion.nav>

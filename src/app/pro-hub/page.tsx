@@ -11,10 +11,12 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { Sparkles } from "lucide-react";
+import { useAuth } from "@/hooks/use-auth";
 
 export default function ProHub() {
     const router = useRouter();
     const [mounted, setMounted] = useState(false);
+    const { isLoggedIn, isLoading } = useAuth();
 
     useEffect(() => {
         setMounted(true);
@@ -67,16 +69,29 @@ export default function ProHub() {
 
                                 <BlurFade delay={1.5}>
                                     <div className="flex flex-wrap gap-4">
-                                        <ShimmerButton
-                                            onClick={() => router.push("/agent?mode=lab")}
-                                            className="h-12 px-8 text-[11px] font-black uppercase tracking-[0.2em] text-[#0B0E14]"
-                                            background="#00FF41"
-                                            shimmerColor="#ffffff"
-                                        >
-                                            <span className="flex items-center gap-3">
-                                                Ask xManager Agent <Sparkles className="w-4 h-4" />
-                                            </span>
-                                        </ShimmerButton>
+                                        {!isLoading && isLoggedIn ? (
+                                            <ShimmerButton
+                                                onClick={() => router.push("/agent?mode=lab")}
+                                                className="h-12 px-8 text-[11px] font-black uppercase tracking-[0.2em] text-[#0B0E14]"
+                                                background="#00FF41"
+                                                shimmerColor="#ffffff"
+                                            >
+                                                <span className="flex items-center gap-3">
+                                                    Ask xManager Agent <Sparkles className="w-4 h-4" />
+                                                </span>
+                                            </ShimmerButton>
+                                        ) : (
+                                            <ShimmerButton
+                                                onClick={() => router.push("/auth")}
+                                                className="h-12 px-8 text-[11px] font-black uppercase tracking-[0.2em] text-[#0B0E14]"
+                                                background="#00FF41"
+                                                shimmerColor="#ffffff"
+                                            >
+                                                <span className="flex items-center gap-3">
+                                                    Log in to Ask Agent <Sparkles className="w-4 h-4" />
+                                                </span>
+                                            </ShimmerButton>
+                                        )}
                                     </div>
                                 </BlurFade>
                             </div>

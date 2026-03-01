@@ -9,10 +9,12 @@ import { BlurFade } from "@/components/ui/blur-fade";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Trophy, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/hooks/use-auth";
 
 export function HeroSection() {
     const router = useRouter();
     const [activeTab, setActiveTab] = useState<"competitive" | "career">("competitive");
+    const { isLoggedIn, isLoading } = useAuth();
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0B0E14] px-4 pt-16">
@@ -120,12 +122,21 @@ export function HeroSection() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-5 items-center justify-center">
-                                <InteractiveHoverButton
-                                    className="h-14 px-10 text-white border-white/20"
-                                    onClick={() => router.push(activeTab === "competitive" ? "/pro-hub" : "/boardroom")}
-                                >
-                                    {activeTab === "competitive" ? "Enter the Lab" : "Enter the Boardroom"}
-                                </InteractiveHoverButton>
+                                {!isLoading && isLoggedIn ? (
+                                    <InteractiveHoverButton
+                                        className="h-14 px-10 text-white border-white/20"
+                                        onClick={() => router.push(activeTab === "competitive" ? "/agent?mode=lab" : "/agent?mode=boardroom")}
+                                    >
+                                        {activeTab === "competitive" ? "Enter the Lab" : "Enter the Boardroom"}
+                                    </InteractiveHoverButton>
+                                ) : (
+                                    <InteractiveHoverButton
+                                        className="h-14 px-10 text-white border-white/20"
+                                        onClick={() => router.push("/auth")}
+                                    >
+                                        Login to Access
+                                    </InteractiveHoverButton>
+                                )}
                                 <InteractiveHoverButton
                                     className="h-14 px-10 border-white/10 text-white/70"
                                     onClick={() => router.push("/pitch-notes")}

@@ -4,8 +4,10 @@ import { BlurFade } from "@/components/ui/blur-fade";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Sparkles } from "lucide-react";
 import { Particles } from "@/components/ui/particles";
+import { useAuth } from "@/hooks/use-auth";
 
 export function FinalCta() {
+    const { isLoggedIn, isLoading } = useAuth();
     return (
         <section className="py-64 bg-[#0B0E14] relative px-6 overflow-hidden">
             <Particles
@@ -29,9 +31,21 @@ export function FinalCta() {
                     </h2>
 
                     <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                        <InteractiveHoverButton className="h-14 px-12 text-white border-white/20">
-                            Initialize xManager
-                        </InteractiveHoverButton>
+                        {!isLoading && isLoggedIn ? (
+                            <InteractiveHoverButton
+                                className="h-14 px-12 text-white border-white/20"
+                                onClick={() => window.location.href = "/agent"}
+                            >
+                                Enter xManager
+                            </InteractiveHoverButton>
+                        ) : (
+                            <InteractiveHoverButton
+                                className="h-14 px-12 text-white border-white/20"
+                                onClick={() => window.location.href = "/auth"}
+                            >
+                                Log in to Initialize
+                            </InteractiveHoverButton>
+                        )}
                         <InteractiveHoverButton className="h-14 px-12 border-white/10 text-white/70">
                             Watch Pitch Notes
                         </InteractiveHoverButton>

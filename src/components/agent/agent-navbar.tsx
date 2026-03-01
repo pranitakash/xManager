@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { LogOut } from "lucide-react";
+import { LogOut, Clock } from "lucide-react";
 
 type Mode = "lab" | "boardroom";
 
@@ -76,7 +76,14 @@ export function AgentNavbar({ mode, onModeChange }: AgentNavbarProps) {
                 </div>
 
                 {/* Logout Capsule */}
-                <div className="flex-1 flex justify-end">
+                <div className="flex-1 flex justify-end gap-3">
+                    <button
+                        onClick={() => router.push("/history")}
+                        className="bg-[#0B0E14]/40 backdrop-blur-2xl border border-white/5 px-4 py-2.5 rounded-2xl flex items-center gap-3 shadow-2xl text-gray-500 hover:text-white transition-all duration-300 group"
+                    >
+                        <Clock className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+                        <span className="text-[10px] font-black uppercase tracking-widest hidden md:inline">History</span>
+                    </button>
                     <button
                         onClick={handleLogout}
                         className="bg-[#0B0E14]/40 backdrop-blur-2xl border border-white/5 px-4 py-2.5 rounded-2xl flex items-center gap-3 shadow-2xl text-gray-500 hover:text-red-400 hover:border-red-500/20 transition-all duration-300 group"

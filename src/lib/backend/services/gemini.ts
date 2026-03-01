@@ -46,7 +46,6 @@ export async function executeTextPrompt(
                 maxOutputTokens,
                 responseMimeType: "application/json",
             },
-            tools: [{ googleSearch: {} } as any],
             systemInstruction,
         });
 
@@ -93,7 +92,6 @@ export async function executeMultimodalPrompt(
                 maxOutputTokens,
                 responseMimeType: "application/json",
             },
-            tools: [{ googleSearch: {} } as any],
             systemInstruction,
         });
 
