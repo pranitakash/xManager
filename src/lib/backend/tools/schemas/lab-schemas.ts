@@ -12,6 +12,12 @@ export const InvestmentWhaleInputSchema = z.object({
     riskTolerance: z.enum(["low", "medium", "high"]).default("medium"),
     timeHorizon: z.enum(["short", "medium", "long"]).default("medium"),
     focusArea: z.string().max(200).optional(),
+    image: z
+        .object({
+            base64: z.string().min(1),
+            mimeType: z.enum(["image/jpeg", "image/png", "image/webp", "image/gif"]),
+        })
+        .optional(),
 });
 
 export const InvestmentWhaleOutputSchema = z.object({
@@ -42,6 +48,12 @@ export const TransferScoutInputSchema = z.object({
     league: z.string().max(100).optional(),
     playstyle: z.string().max(200).optional(),
     minOverall: z.number().min(50).max(99).optional(),
+    image: z
+        .object({
+            base64: z.string().min(1),
+            mimeType: z.enum(["image/jpeg", "image/png", "image/webp", "image/gif"]),
+        })
+        .optional(),
 });
 
 export const TransferScoutOutputSchema = z.object({
@@ -71,6 +83,12 @@ export const SBCSolutionistInputSchema = z.object({
     budget: z.number().min(0).max(50_000_000),
     ownedPlayers: z.array(z.string()).max(50).optional(),
     platform: z.enum(["ps", "xbox", "pc"]).default("ps"),
+    image: z
+        .object({
+            base64: z.string().min(1),
+            mimeType: z.enum(["image/jpeg", "image/png", "image/webp", "image/gif"]),
+        })
+        .optional(),
 });
 
 export const SBCSolutionistOutputSchema = z.object({
@@ -102,6 +120,12 @@ export const EvoPathOptimizerInputSchema = z.object({
     targetPosition: z.string().max(20).optional(),
     priorityStats: z.array(z.string()).max(6).optional(),
     availableEvolutions: z.array(z.string()).max(20).optional(),
+    image: z
+        .object({
+            base64: z.string().min(1),
+            mimeType: z.enum(["image/jpeg", "image/png", "image/webp", "image/gif"]),
+        })
+        .optional(),
 });
 
 export const EvoPathOptimizerOutputSchema = z.object({
@@ -131,6 +155,12 @@ export const TacticsSimulatorInputSchema = z.object({
     playstylePreference: z.enum(["possession", "counter", "balanced", "high-press", "park-the-bus"]).default("balanced"),
     opponentFormation: z.string().max(20).optional(),
     weaknesses: z.string().max(500).optional(),
+    image: z
+        .object({
+            base64: z.string().min(1),
+            mimeType: z.enum(["image/jpeg", "image/png", "image/webp", "image/gif"]),
+        })
+        .optional(),
 });
 
 export const TacticsSimulatorOutputSchema = z.object({

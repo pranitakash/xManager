@@ -56,6 +56,7 @@ function AgentContent() {
     const [isTyping, setIsTyping] = useState(false);
     const [activeFeature, setActiveFeature] = useState<string | null>(null);
     const [activeTool, setActiveTool] = useState<string | null>(null);
+    const [showForm, setShowForm] = useState(true);
 
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -69,6 +70,7 @@ function AgentContent() {
     useEffect(() => {
         setActiveFeature(null);
         setActiveTool(null);
+        setShowForm(true);
         setMessages([{
             id: Date.now().toString(),
             role: "assistant",
@@ -197,6 +199,7 @@ function AgentContent() {
     const handleFeatureClick = useCallback((toolId: string) => {
         setActiveFeature(toolId);
         setActiveTool(toolId);
+        setShowForm(true);
 
         // Add a system message indicating tool selection
         const toolConfig = TOOL_INPUT_CONFIGS[toolId];
@@ -213,6 +216,8 @@ function AgentContent() {
     // ─── Form Submit Handler ──────────────────────────────
     const handleFormSubmit = useCallback((data: Record<string, unknown>, image?: { base64: string; mimeType: string; name: string; size: number; preview: string }) => {
         if (!activeTool) return;
+
+        setShowForm(false);
 
         const imageData = image
             ? { base64: image.base64, mimeType: image.mimeType }
@@ -245,7 +250,7 @@ function AgentContent() {
                 ref={scrollRef}
                 className={cn(
                     "flex-1 overflow-y-auto pt-28 px-6 scrollbar-hide flex flex-col items-center ml-20",
-                    activeToolConfig ? "pb-8" : "pb-32"
+                    activeToolConfig && showForm ? "pb-8" : "pb-32"
                 )}
             >
                 <div className="w-full max-w-3xl space-y-10">
@@ -317,13 +322,28 @@ function AgentContent() {
             {/* ── Tool Input Form (replaces text bar when a tool is active) ── */}
             <div className="ml-20">
                 <AnimatePresence mode="wait">
-                    {activeToolConfig ? (
+                    {activeToolConfig && showForm ? (
                         <ToolInputForm
                             key={activeTool}
                             config={activeToolConfig}
                             onSubmit={handleFormSubmit}
                             isLoading={isTyping}
                         />
+                    ) : activeToolConfig && !showForm ? (
+                        <motion.div
+                            key="reopen-tool"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed bottom-10 left-1/2 -translate-x-1/2 ml-10 z-50 flex gap-4"
+                        >
+                            <button
+                                onClick={() => setShowForm(true)}
+                                className="px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-medium backdrop-blur-xl shadow-2xl transition-all"
+                            >
+                                Reopen Parameters
+                            </button>
+                        </motion.div>
                     ) : (
                         <motion.div
                             key="no-tool"

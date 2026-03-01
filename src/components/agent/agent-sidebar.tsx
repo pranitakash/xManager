@@ -14,7 +14,6 @@ interface Feature {
     name: string;
     shortName: string;
     toolId: string;
-    prompt: string;
 }
 
 const labFeatures: Feature[] = [
@@ -23,42 +22,36 @@ const labFeatures: Feature[] = [
         name: "Investment Whale",
         shortName: "Whale",
         toolId: "investment-whale",
-        prompt: "Analyze the current market trends and identify the best investment opportunities for card flipping."
     },
     {
         icon: Search,
         name: "Transfer Scout",
         shortName: "Scout",
         toolId: "transfer-scout",
-        prompt: "Find budget-friendly alternatives to the most expensive meta players in the current market."
     },
     {
         icon: Cpu,
         name: "SBC Solutionist",
         shortName: "SBC",
         toolId: "sbc-solutionist",
-        prompt: "Help me find the cheapest solution for the current active SBCs using my club players."
     },
     {
         icon: Dna,
         name: "Evo-Path Optimizer",
         shortName: "Evo",
         toolId: "evo-path-optimizer",
-        prompt: "Map out the optimal evolution path to maximize my card's potential and stats."
     },
     {
         icon: Settings,
         name: "Tactics Simulator",
         shortName: "Tactics",
         toolId: "tactics-simulator",
-        prompt: "Generate custom tactical instructions and slider values tailored to my squad's PlayStyles."
     },
     {
         icon: Camera,
         name: "Post-Match Reviewer",
         shortName: "Review",
         toolId: "post-match-reviewer",
-        prompt: "Analyze my last match and identify where I lost control of the game."
     },
 ];
 
@@ -68,48 +61,42 @@ const boardroomFeatures: Feature[] = [
         name: "Wonderkid Whisperer",
         shortName: "Wonderkids",
         toolId: "wonderkid-whisperer",
-        prompt: "Detect hidden gems and high-growth prospects before they hit the global radar."
     },
     {
         icon: ShieldCheck,
         name: "Realism Enforcer",
         shortName: "Realism",
         toolId: "realism-enforcer",
-        prompt: "Apply algorithmic constraints to ensure my transfers stay grounded in reality."
     },
     {
         icon: PenTool,
         name: "Storyline Generator",
         shortName: "Storyline",
         toolId: "storyline-generator",
-        prompt: "Create a dynamic narrative arc and press scenario to deepen my club's lore this season."
     },
     {
         icon: PieChart,
         name: "Financial Auditor",
         shortName: "Finance",
         toolId: "financial-auditor",
-        prompt: "Track my club's revenue, transfer profit, and wage-to-turnover ratios in real-time."
     },
     {
         icon: Brain,
         name: "Manager Persona AI",
         shortName: "Persona",
         toolId: "manager-persona-ai",
-        prompt: "Help me develop a unique coaching identity that influences morale and negotiation tactics."
     },
     {
         icon: Globe,
         name: "Sister Club Scout",
         shortName: "Sister Clubs",
         toolId: "sister-club-scout",
-        prompt: "Manage my global network of affiliates to loan talent and monitor development."
     },
 ];
 
 interface AgentSidebarProps {
     mode: Mode;
-    onFeatureClick: (toolId: string, prompt: string) => void;
+    onFeatureClick: (toolId: string) => void;
     activeFeature: string | null;
 }
 
@@ -156,7 +143,7 @@ export function AgentSidebar({ mode, onFeatureClick, activeFeature }: AgentSideb
                             return (
                                 <button
                                     key={feature.name}
-                                    onClick={() => onFeatureClick(feature.toolId, feature.prompt)}
+                                    onClick={() => onFeatureClick(feature.toolId)}
                                     className={cn(
                                         "flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-300 group/btn text-left w-full min-w-0",
                                         isActive

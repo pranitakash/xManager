@@ -145,6 +145,12 @@ export const FinancialAuditorInputSchema = z.object({
         .max(30)
         .optional(),
     season: z.string().max(20).optional(),
+    image: z
+        .object({
+            base64: z.string().min(1),
+            mimeType: z.enum(["image/jpeg", "image/png", "image/webp", "image/gif"]),
+        })
+        .optional(),
 });
 
 export const FinancialAuditorOutputSchema = z.object({

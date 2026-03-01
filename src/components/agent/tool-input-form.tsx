@@ -3,7 +3,7 @@
 import React, { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Upload, X, Image as ImageIcon, Send, Loader2, FileImage, AlertCircle,
+    Upload, X, Image as ImageIcon, Send, Loader2, FileImage, AlertCircle, ChevronDown
 } from "lucide-react";
 import type { ToolInputConfig, ToolField } from "@/lib/tool-input-config";
 
@@ -23,6 +23,53 @@ interface ToolInputFormProps {
 
 const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+
+function CustomSelect({ field, value, onChange }: { field: ToolField; value: string; onChange: (v: string) => void }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const options = field.options || [];
+    const selectedOption = options.find((o) => o.value === value) || options[0];
+
+    return (
+        <div className="relative">
+            <button
+                type="button"
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full flex items-center justify-between bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white hover:bg-white/[0.08] focus:border-[#00FF41]/40 transition-all duration-200"
+            >
+                <span className="truncate">{selectedOption?.label || "Select..."}</span>
+                <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <>
+                        <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+                        <motion.div
+                            initial={{ opacity: 0, y: -5 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -5 }}
+                            transition={{ duration: 0.15 }}
+                            className="absolute z-50 w-full mt-1 bg-[#1A1D24] border border-white/10 rounded-lg shadow-2xl overflow-hidden py-1 max-h-48 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent"
+                        >
+                            {options.map((opt) => (
+                                <button
+                                    key={opt.value}
+                                    type="button"
+                                    onClick={() => {
+                                        onChange(opt.value);
+                                        setIsOpen(false);
+                                    }}
+                                    className={`w-full text-left px-3 py-2 text-sm transition-colors hover:bg-white/10 ${value === opt.value ? "bg-[#00FF41]/10 text-[#00FF41] font-medium" : "text-gray-300"}`}
+                                >
+                                    {opt.label}
+                                </button>
+                            ))}
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
 
 export function ToolInputForm({ config, onSubmit, isLoading }: ToolInputFormProps) {
     const [formData, setFormData] = useState<Record<string, string | number>>(() => {
@@ -153,17 +200,11 @@ export function ToolInputForm({ config, onSubmit, isLoading }: ToolInputFormProp
                 );
             case "select":
                 return (
-                    <select
+                    <CustomSelect
+                        field={field}
                         value={String(value)}
-                        onChange={(e) => handleFieldChange(field.name, e.target.value)}
-                        className={baseInputClass + " appearance-none cursor-pointer"}
-                    >
-                        {field.options?.map((opt) => (
-                            <option key={opt.value} value={opt.value} className="bg-[#0B0E14] text-white">
-                                {opt.label}
-                            </option>
-                        ))}
-                    </select>
+                        onChange={(v) => handleFieldChange(field.name, v)}
+                    />
                 );
             case "textarea":
                 return (
