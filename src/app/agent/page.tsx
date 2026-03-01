@@ -14,6 +14,7 @@ import {
 import { AgentNavbar } from "@/components/agent/agent-navbar";
 import { AgentSidebar } from "@/components/agent/agent-sidebar";
 import { ToolInputForm } from "@/components/agent/tool-input-form";
+import { ToolResultCard } from "@/components/agent/tool-result-card";
 import { cn } from "@/lib/utils";
 import { GridPattern } from "@/components/ui/grid-pattern";
 import { TOOL_INPUT_CONFIGS } from "@/lib/tool-input-config";
@@ -263,7 +264,7 @@ function AgentContent() {
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 className={cn(
                                     "flex flex-col gap-3",
-                                    msg.role === "user" ? "items-end" : "items-start"
+                                    msg.role === "user" ? "items-end" : "items-start w-full"
                                 )}
                             >
                                 <div className="flex items-center gap-3 mb-1">
@@ -287,16 +288,20 @@ function AgentContent() {
                                     )}
                                 </div>
                                 <div className={cn(
-                                    "max-w-[85%] p-6 rounded-3xl text-sm font-medium leading-relaxed",
+                                    "rounded-3xl text-sm font-medium leading-relaxed",
                                     msg.role === "user"
-                                        ? "bg-white/5 border border-white/10 text-white rounded-tr-none"
-                                        : "bg-[#0B0E14] border border-white/5 text-gray-300 rounded-tl-none shadow-xl"
+                                        ? "max-w-[85%] p-6 bg-white/5 border border-white/10 text-white rounded-tr-none"
+                                        : msg.result
+                                            ? "w-full pt-1 pb-4" // Removed original background to let custom cards take over
+                                            : "max-w-[85%] p-6 bg-[#0B0E14] border border-white/5 text-gray-300 rounded-tl-none shadow-xl"
                                 )}>
                                     {msg.status === "pending" || msg.status === "processing" ? (
                                         <div className="flex items-center gap-3">
                                             <Loader2 className="w-4 h-4 animate-spin text-gray-500" />
                                             <span className="text-gray-500">{msg.content}</span>
                                         </div>
+                                    ) : msg.result ? (
+                                        <ToolResultCard result={msg.result} />
                                     ) : (
                                         <div className="whitespace-pre-wrap">{msg.content}</div>
                                     )}
