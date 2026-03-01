@@ -40,3 +40,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 magicui.txt
+
+
+# build and lint artifacts
+build.log
+build_errors.log
+build_output.txt
+lint_*.json
+lint_output.txt

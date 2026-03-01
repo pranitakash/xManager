@@ -68,7 +68,7 @@ export function BoardroomWheel() {
     return (
         <div className="relative w-[500px] h-[500px] flex items-center justify-center">
             {/* Custom Styles for sync rotation */}
-            <style jsx global>{`
+            <style>{`
                 @keyframes wheel-spin {
                     from { transform: rotate(0deg); }
                     to { transform: rotate(360deg); }

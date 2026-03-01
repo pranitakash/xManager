@@ -1,11 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { RetroGrid } from "@/components/ui/retro-grid";
 import { Particles } from "@/components/ui/particles";
 import { MainFooter } from "@/components/main-footer";
-import { Zap, Target, Trophy, TrendingUp } from "lucide-react";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { Zap, Target, Trophy, TrendingUp, ArrowRight } from "lucide-react";
 
 export default function PitchNotesPage() {
     return (
@@ -74,7 +76,7 @@ export default function PitchNotesPage() {
                                         {note.title}
                                     </h3>
                                     <p className="text-gray-500 text-sm font-medium leading-relaxed mb-8 flex-1 italic">
-                                        "{note.description}"
+                                        &quot;{note.description}&quot;
                                     </p>
                                     <div className="flex items-center justify-between border-t border-white/5 pt-6">
                                         <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-600">
@@ -86,6 +88,33 @@ export default function PitchNotesPage() {
                             </BlurFade>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="relative py-20 px-6 z-10">
+                <div className="max-w-3xl mx-auto text-center space-y-8">
+                    <BlurFade delay={0.1}>
+                        <h2 className="text-3xl md:text-5xl font-heading font-black text-white uppercase tracking-tighter">
+                            Ready to <span className="text-[#00FF41]">Execute</span>?
+                        </h2>
+                        <p className="text-gray-400 text-lg font-medium tracking-tight mt-4 max-w-lg mx-auto">
+                            Take these insights into the xManager Agent and put them to work on your squad.
+                        </p>
+                    </BlurFade>
+                    <BlurFade delay={0.3}>
+                        <Link href="/agent">
+                            <ShimmerButton
+                                className="h-14 px-10 text-[11px] font-black uppercase tracking-[0.2em] text-[#0B0E14] mx-auto"
+                                background="#00FF41"
+                                shimmerColor="#ffffff"
+                            >
+                                <span className="flex items-center gap-3">
+                                    Open xManager Agent <ArrowRight className="w-4 h-4" />
+                                </span>
+                            </ShimmerButton>
+                        </Link>
+                    </BlurFade>
                 </div>
             </section>
 

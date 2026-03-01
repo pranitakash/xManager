@@ -3,6 +3,7 @@
 import { Zap, Github, Twitter, MessageSquare, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { InfoModal } from "./info-modal";
+import Link from "next/link";
 
 export function MainFooter() {
     const [selectedInfo, setSelectedInfo] = useState<{ title: string; content: React.ReactNode } | null>(null);
@@ -160,7 +161,7 @@ export function MainFooter() {
             <div className="space-y-10">
                 <p>xManager is designed to assist, not dominate. We believe in the integrity of competitive play.</p>
                 <div className="p-10 bg-[#00FF41]/5 border border-[#00FF41]/20 rounded-3xl italic text-[#00FF41] font-medium text-center">
-                    "Intelligence is an advantage, not a replacement for skill. We ensure our tools bridge the gap between effort and results without breaking the spirit of the game."
+                    &quot;Intelligence is an advantage, not a replacement for skill. We ensure our tools bridge the gap between effort and results without breaking the spirit of the game.&quot;
                 </div>
             </div>
         )
@@ -181,7 +182,7 @@ export function MainFooter() {
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 mb-32">
                     <div className="space-y-12">
-                        <a href="/" className="flex items-start gap-4">
+                        <Link href="/" className="flex items-start gap-4">
                             <img src="/xManager_Logo.png" alt="FC xManager Logo" className="w-20 h-20 object-contain" />
                             <div className="space-y-6">
                                 <span className="text-2xl font-heading font-black tracking-[-0.05em] text-white uppercase italic">
@@ -191,7 +192,7 @@ export function MainFooter() {
                                     The ultimate sidekick for elite FC 25 players. Stop bottling the Weekend League and start building your dynasty with the most relatable AI in the game.
                                 </p>
                             </div>
-                        </a>
+                        </Link>
                         <div className="flex gap-4">
                             <a href="#" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all border border-white/10">
                                 <Github className="w-5 h-5 text-white" />

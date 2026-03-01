@@ -62,7 +62,7 @@ export default function BoardroomPage() {
                                     delay={1000}
                                     startOnView
                                 >
-                                    Welcome, Director. Command your club's future with elite administrative tools and financial oversight.
+                                    Welcome, Director. Command your club&apos;s future with elite administrative tools and financial oversight.
                                 </TypingAnimation>
 
                                 <BlurFade delay={1.5}>

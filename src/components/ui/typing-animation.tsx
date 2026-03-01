@@ -22,6 +22,16 @@ interface TypingAnimationProps extends MotionProps {
   cursorStyle?: "line" | "block" | "underscore"
 }
 
+// Module-level cache: motion.create is called once per element type, never during render
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const typingMotionCache = new Map<React.ElementType, any>()
+function getTypingMotionComponent(Component: React.ElementType) {
+  if (!typingMotionCache.has(Component)) {
+    typingMotionCache.set(Component, motion.create(Component as any, { forwardMotionProps: true }))
+  }
+  return typingMotionCache.get(Component)
+}
+
 export function TypingAnimation({
   children,
   words,
@@ -39,9 +49,7 @@ export function TypingAnimation({
   cursorStyle = "line",
   ...props
 }: TypingAnimationProps) {
-  const MotionComponent = motion.create(Component, {
-    forwardMotionProps: true,
-  })
+  const MotionComponent = getTypingMotionComponent(Component)
 
   const [displayedText, setDisplayedText] = useState<string>("")
   const [currentWordIndex, setCurrentWordIndex] = useState(0)

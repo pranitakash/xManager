@@ -194,10 +194,10 @@ export function BentoFeatures() {
                                             </p>
                                         </div>
 
-                                        {(feature as any).image && (
+                                        {(feature as { image?: string }).image && (
                                             <div className="absolute inset-0 z-[-1] opacity-20 group-hover:opacity-40 transition-opacity duration-700">
                                                 <img
-                                                    src={(feature as any).image}
+                                                    src={(feature as { image?: string }).image}
                                                     alt={feature.name}
                                                     className="w-full h-full object-cover rounded-[2.5rem]"
                                                 />

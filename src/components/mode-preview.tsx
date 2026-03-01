@@ -47,12 +47,12 @@ export function ModePreview() {
                                         <span className="text-[10px] font-black text-white/40 uppercase tracking-widest">FC 25 Neural Scout Feed</span>
                                     </div>
                                     <p className="text-lg font-heading font-black text-white leading-tight uppercase">
-                                        "AI reveals 18yo Wonderkid in Division 2"
+                                        &quot;AI reveals 18yo Wonderkid in Division 2&quot;
                                     </p>
                                 </div>
                                 <div className="p-6 rounded-[2rem] bg-black/80 border border-[#D4AF37]/20 shadow-2xl space-y-4 ml-12 transform hover:-translate-y-2 transition-transform">
                                     <p className="text-lg font-heading font-black text-white leading-tight uppercase">
-                                        "Board confidence: 99.4%"
+                                        &quot;Board confidence: 99.4%&quot;
                                     </p>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@ export function ModePreview() {
                                 </div>
                                 <div className="p-6 rounded-[2rem] bg-black/80 border border-[#00FF41]/20 shadow-2xl space-y-4 -ml-12 transform hover:-translate-y-2 transition-transform">
                                     <p className="text-lg font-heading font-black text-white leading-tight uppercase">
-                                        "4-3-2-1 Neural Meta Synced"
+                                        &quot;4-3-2-1 Neural Meta Synced&quot;
                                     </p>
                                 </div>
                             </div>

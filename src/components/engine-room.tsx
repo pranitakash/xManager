@@ -92,7 +92,7 @@ export function EngineRoom() {
                         </h2>
 
                         <p className="text-xl text-gray-500 max-w-lg mb-12 font-medium tracking-tight leading-relaxed">
-                            xManager is the Gaffer's secret weapon. We've built the ultimate brain for FC 25, syncing every match-day shift and market pulse directly to your lab.
+                            xManager is the Gaffer&apos;s secret weapon. We&apos;ve built the ultimate brain for FC 25, syncing every match-day shift and market pulse directly to your lab.
                         </p>
 
                         <div className="p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/5 backdrop-blur-3xl relative overflow-hidden group">
