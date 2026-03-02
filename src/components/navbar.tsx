@@ -63,14 +63,18 @@ export function Navbar() {
                                     <NavbarPopup item={item} isOpen={hoveredItem === item} />
                                 </div>
                             ))}
-                            <div className="w-[1px] h-4 bg-white/10" />
-                            <a
-                                href="/history"
-                                className="text-[9px] font-black tracking-[0.2em] text-gray-400 uppercase hover:text-[#00FF41] transition-colors flex items-center gap-1.5"
-                            >
-                                <Clock className="w-3.5 h-3.5" />
-                                History
-                            </a>
+                            {isLoggedIn && (
+                                <>
+                                    <div className="w-[1px] h-4 bg-white/10" />
+                                    <a
+                                        href="/history"
+                                        className="text-[9px] font-black tracking-[0.2em] text-gray-400 uppercase hover:text-[#00FF41] transition-colors flex items-center gap-1.5"
+                                    >
+                                        <Clock className="w-3.5 h-3.5" />
+                                        History
+                                    </a>
+                                </>
+                            )}
                         </div>
                     </div>
 
