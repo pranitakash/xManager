@@ -93,10 +93,11 @@ export async function GET(request: NextRequest) {
             },
         });
     } catch (error) {
+        console.error("HISTORY_FETCH_ERROR:", error);
         const errorMessage = error instanceof Error ? error.message : "Internal server error";
         log.error("History fetch failed", { error: errorMessage });
         return NextResponse.json(
-            { error: "Internal server error", code: "INTERNAL_ERROR" },
+            { error: "Internal server error", code: "INTERNAL_ERROR", details: errorMessage },
             { status: 500 }
         );
     }
@@ -104,6 +105,7 @@ export async function GET(request: NextRequest) {
 
 // ─── Generate a short summary from input data ───────────
 function generateInputSummary(inputData: Record<string, unknown>): string {
+    if (!inputData || typeof inputData !== "object") return "Execution";
     const parts: string[] = [];
 
     // Extract the most meaningful fields

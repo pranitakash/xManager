@@ -47,7 +47,7 @@ export function ToolResultCard({ result }: ToolResultCardProps) {
             className="w-full flex flex-col gap-5 mt-2"
         >
             {/* Analysis Section */}
-            {result.analysis && typeof result.analysis === "string" && (
+            {typeof result.analysis === "string" && result.analysis ? (
                 <motion.div variants={itemVariants} className="bg-gradient-to-br from-[#1E293B]/60 to-[#0F172A]/60 border border-blue-500/20 rounded-2xl p-6 backdrop-blur-md shadow-lg">
                     <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 bg-blue-500/10 rounded-xl text-blue-400 border border-blue-500/20 shadow-inner">
@@ -59,10 +59,10 @@ export function ToolResultCard({ result }: ToolResultCardProps) {
                         {result.analysis as string}
                     </div>
                 </motion.div>
-            )}
+            ) : null}
 
             {/* Primary Recommendation Section */}
-            {result.primaryRecommendation && typeof result.primaryRecommendation === "string" && (
+            {typeof result.primaryRecommendation === "string" && result.primaryRecommendation ? (
                 <motion.div variants={itemVariants} className="bg-gradient-to-br from-emerald-950/40 to-emerald-900/10 border border-emerald-500/30 rounded-2xl p-6 backdrop-blur-md shadow-xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
                     <div className="flex items-center gap-3 mb-4 relative z-10">
@@ -75,7 +75,7 @@ export function ToolResultCard({ result }: ToolResultCardProps) {
                         {result.primaryRecommendation as string}
                     </div>
                 </motion.div>
-            )}
+            ) : null}
 
             {/* Grid for other sections */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
